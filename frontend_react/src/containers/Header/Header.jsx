@@ -10,16 +10,16 @@ const Header = () => {
         <section id='home' className='home'>
             <div className='app__header app__flex'>
                 <div className='app__header-content'>
-                    <span>
+                    <h1 className='p-text'>
                     &nbsp; Hi There!<span>👋🏻</span>
-                    </span>
+                    </h1>
                     <span>
                     I'm
-                    <strong className="main-name"> Yash Oswal</strong>
+                    <strong className="p-text main-name"> Yash Oswal</strong>
                     </span>
-                    <p>
+                    <p className='p-text'>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, enim! Beatae, quisquam. At ex, deserunt architecto iste dignissimos nesciunt laboriosam accusantium nostrum quod culpa quos dolor unde facere explicabo dolorum!
-                    </p>
+                    </p>                    
                 </div>
                 <div className='app__header-img'>
                     <img src={images.profile} alt=""/>

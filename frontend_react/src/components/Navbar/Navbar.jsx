@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
@@ -18,7 +19,7 @@ const Navbar = () => {
         {linkList.map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
             <div />
-            <a href={`#${item}`}>{item}</a>
+            <a href={`#${item}`}>{item}</a>            
           </li>
         ))}
       </ul>
