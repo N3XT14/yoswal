@@ -15,10 +15,10 @@ const dbo = require("./db/conn");
 // Server production assets
 
 if ( process.env.NODE_ENV == "production") {
-  app.use(express.static(path.join(__dirname, "frontend_react", "build")));
+  app.use(express.static(path.join(__dirname, "client", "build")));
   app.get("*", (req, res) => {
     console.log(res);
-    res.sendFile(path.resolve(__dirname, 'frontend_react', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 };
 
