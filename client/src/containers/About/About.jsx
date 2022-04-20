@@ -6,6 +6,7 @@ import './About.scss';
 import images from '../../constants/images.js'
 
 const About = () => {
+    console.log(process.env);
     const [about, setAbouts] = useState([]);
     console.log(`About ${about}`);
     const abouts = [
