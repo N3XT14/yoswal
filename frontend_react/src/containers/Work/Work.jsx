@@ -14,7 +14,7 @@ const Work = () => {
     
     useEffect(() => {
         async function getWorkData() {        
-            const response = await fetch(`http://localhost:3001/workdata/`);
+            const response = await fetch(`http://localhost:5000/workdata/`);
             
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`;
