@@ -6,9 +6,8 @@ import './About.scss';
 import images from '../../constants/images.js'
 
 const About = () => {
-    console.log(process.env);
-    const [about, setAbouts] = useState([]);
-    console.log(`About ${about}`);
+
+    const [about, setAbouts] = useState([]);    
     const abouts = [
         { title: 'Web Development', description: 'I am a good Developer', imgUrl: images.about1},
         { title: 'Web Design', description: 'I am a good Designed', imgUrl: images.about2},
