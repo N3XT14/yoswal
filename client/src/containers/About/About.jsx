@@ -17,7 +17,7 @@ const About = () => {
     ];
     useEffect(() => {
       async function getRecords() {        
-        const response = await fetch(`http://localhost:5000/record/`);
+        const response = await fetch(`https://n3xt.herokuapp.com/record/`);
         
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;
