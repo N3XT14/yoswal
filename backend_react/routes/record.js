@@ -25,6 +25,20 @@ recordRoutes.route("/record").get(function (req, res) {
     });
 });
 
+// This section will help you get a list of all the work section data.
+recordRoutes.route("/workdata").get(function (req, res) {
+  let db_connect = dbo.getDb();
+  
+  db_connect
+    .collection("work")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+
 // This section will help you get a single record by id
 recordRoutes.route("/record/:id").get(function (req, res) {
   let db_connect = dbo.getDb();

@@ -1,6 +1,7 @@
 import AppWrap from './AppWrap';
-//import MotionWrap from './MotionWrap';
+import MotionWrap from './MotionWrap';
 
 export {
-  AppWrap  
+  AppWrap,
+  MotionWrap
 };
