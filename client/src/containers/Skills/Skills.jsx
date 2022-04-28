@@ -12,8 +12,8 @@ const Skills = () => {
 
   useEffect(() => {
     async function getSkillData() {
-      const sResponse = await fetch(`http://localhost:5000/skillsdata/`);
-      const eResponse = await fetch(`http://localhost:5000/experiences`);
+      const sResponse = await fetch(`https://n3xt.herokuapp.com/skillsdata/`);
+      const eResponse = await fetch(`https://n3xt.herokuapp.com/experiences`);
 
       if (!sResponse.ok) {
         const message = `An error occurred: ${sResponse.statusText}`;

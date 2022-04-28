@@ -15,7 +15,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     async function getTestimonialsData() {
-      const response = await fetch(`http://localhost:5000/testimonialsdata/`);
+      const response = await fetch(`https://n3xt.herokuapp.com/testimonialsdata/`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;

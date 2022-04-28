@@ -38,7 +38,7 @@ const Contact = () => {
       message: formData.message,
     };
 
-    const response = await fetch("http://localhost:5000/addContactData", {
+    const response = await fetch("https://n3xt.herokuapp.com/addContactData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
