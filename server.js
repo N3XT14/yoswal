@@ -1,4 +1,4 @@
-// Imports
+// Required Imports.
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
@@ -9,10 +9,11 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(require("./routes/record"));
-// get driver connection
+
+// get driver connection.
 const dbo = require("./db/conn");
  
-// Server production assets
+// Server production assets.
 if ( process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));    
   app.get("*", (req, res) => {    
@@ -22,7 +23,8 @@ if ( process.env.NODE_ENV === "production") {
 
 
 app.listen(port, () => {
-  // perform a database connection when server starts
+
+  // Perform a database connection when server starts.
   dbo.connectToServer(function (err) {
     if (err) console.error(err);
  

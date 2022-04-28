@@ -11,12 +11,12 @@ const dbo = require("../db/conn");
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
-// This section will help you get a list of all the records.
-recordRoutes.route("/record").get(function (req, res) {
+// This API end point will help you get a list of all the about section data.
+recordRoutes.route("/aboutdata").get(function (req, res) {
   let db_connect = dbo.getDb();
-  
+
   db_connect
-    .collection("col")
+    .collection("about")
     .find({})
     .toArray(function (err, result) {
       if (err) throw err;
@@ -24,10 +24,10 @@ recordRoutes.route("/record").get(function (req, res) {
     });
 });
 
-// This section will help you get a list of all the work section data.
+// This API end point will help you get a list of all the work section data.
 recordRoutes.route("/workdata").get(function (req, res) {
   let db_connect = dbo.getDb();
-  
+
   db_connect
     .collection("work")
     .find({})
@@ -37,17 +37,58 @@ recordRoutes.route("/workdata").get(function (req, res) {
     });
 });
 
-
-// This section will help you get a single record by id
-recordRoutes.route("/record/:id").get(function (req, res) {
+// This API end point will help you get a list of all the skill section data.
+recordRoutes.route("/skillsdata").get(function (req, res) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId( req.params.id )};
+
   db_connect
-      .collection("records")
-      .findOne(myquery, function (err, result) {
-        if (err) throw err;
-        res.json(result);
-      });
+    .collection("skills")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+// This API end point will help you get a list of all the experience section data.
+recordRoutes.route("/experiences").get(function (req, res) {
+  let db_connect = dbo.getDb();
+
+  db_connect
+    .collection("experiences")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+// This API end point will help you get a list of all the testimonial data.
+recordRoutes.route("/testimonialsdata").get(function (req, res) {
+  let db_connect = dbo.getDb();
+
+  db_connect
+    .collection("testimonials")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+// This API end point will help you insert the contact section's form data into db.
+recordRoutes.route("/addContactData").post(function (req, res) {
+  let db_connect = dbo.getDb();
+
+  let myObj = {
+    username: req.body.username,
+    email: req.body.email,
+    message: req.body.message,
+  };
+  db_connect.collection("contacts").insertOne(myObj, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
 });
 
 module.exports = recordRoutes;
