@@ -6,7 +6,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Work.scss";
 
 const Work = () => {
-  var workArr = ["Python", "ML/AI", "JavaScript", "TypeScript", "All"];
+  var workArr = ["Python", "AI/ML", "JavaScript", "TypeScript", "All"];
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
