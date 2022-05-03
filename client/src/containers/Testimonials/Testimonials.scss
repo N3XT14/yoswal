@@ -5,6 +5,11 @@
 }
 .app__testimonialsbg {
   background: var(--white-color);
+  height: fit-content; 
+
+  @media screen and (min-width: 700px) and (max-width: 1200px) {        
+    min-height: auto !important;
+  }
 }
 
 .app__testimonial-item {

@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { useForm } from "react-hook-form";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -6,16 +7,8 @@ import "./Contact.scss";
 
 const Contact = () => {
   const emailID = "yashoswal14@gmail.com";
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    message: "",
-  });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const { username, email, message } = formData;
-
+  // Toggle Contact Form
   const useToggle = (initialState = false) => {
     const [state, setState] = useState(initialState);
     const toggle = useCallback(() => setState((state) => !state), []);
@@ -24,14 +17,11 @@ const Contact = () => {
   };
   const [contactForm, setContactForm] = useToggle();
 
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  async function handleSubmit() {
+  async function onSubmit(formData) {
     setLoading(true);
-
     const contact = {
       username: formData.username,
       email: formData.email,
@@ -55,13 +45,18 @@ const Contact = () => {
     setLoading(false);
     setIsFormSubmitted(true);
   }
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   return (
     <>
       <h2 className="head-text app__contact-head">
         Interested in collaborating or investing?
       </h2>
-      <h2 className="app__contact-head">
+      <h2 className="main-text app__contact-head">
         I’m always open for opportunities and work !!!
       </h2>
       <button
@@ -86,40 +81,53 @@ const Contact = () => {
             </div>
           </div>
           {!isFormSubmitted ? (
-            <div className="app__contact-form app__flex">
+            <form
+              className="app__contact-form app__flex"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="app__flex">
                 <input
                   className="p-text"
                   type="text"
                   placeholder="Your Name"
                   name="username"
-                  value={username}
-                  onChange={handleChangeInput}
+                  {...register("username", {
+                    required: "Username is required",
+                  })}
                 />
               </div>
+              {errors.username?.type === "required" && (
+                <span className="app__invalid">{errors.username.message}</span>
+              )}
               <div className="app__flex">
                 <input
                   className="p-text"
-                  type="email"
+                  type="text"
                   placeholder="Your Email"
-                  name="email"
-                  value={email}
-                  onChange={handleChangeInput}
+                  {...register("email", {
+                    required: "Please provide your email",
+                    pattern: {
+                      value:
+                        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                      message: "Please provide a valid email address",
+                    },
+                  })}
                 />
               </div>
+              {errors.email && (
+                <span className="app__invalid">{errors.email.message}</span>
+              )}
               <div>
                 <textarea
                   className="p-text"
                   placeholder="Your Message"
-                  name="message"
-                  value={message}
-                  onChange={handleChangeInput}
+                  {...register("message")}
                 />
               </div>
-              <button type="button" className="p-text" onClick={handleSubmit}>
+              <button type="submit" className="p-text app__formdata-button">
                 {!loading ? "Send Message" : "Sending..."}
               </button>
-            </div>
+            </form>
           ) : (
             <div>
               <h3 className="head-text app__formdata-resp">

@@ -5,6 +5,19 @@
   -webkit-text-fill-color: transparent;
 }
 
+.main-text {
+  margin-top: 1rem;
+  text-align: center;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 1.5rem;
+  }
+}
+
 .app__contactbg {
   background: var(--secondary-color);
   min-height: auto !important;
@@ -151,22 +164,28 @@
   button {
     padding: 1rem 2rem;
     border-radius: 10px;
+    border: 1px groove white !important;
     background-color: transparent;
     font-weight: 500;
     color: var(--white-color);
     margin: 2rem 0 0 0;
     font-family: var(--font-base);
-
-    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
     cursor: pointer;
-  }
-
-  .app__formdata-resp {
-    color: white !important;
   }
 
   @media screen and (max-width: 768px) {
     width: 100%;
     margin: 1rem 0;
   }
+}
+
+.app__invalid {
+  color: red;
+  font-weight: bolder;
+  align-self: flex-start;
+}
+
+.app__formdata-resp {
+  color: white !important;
 }

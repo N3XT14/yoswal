@@ -4,12 +4,31 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
-  height: 100vh; //Keep an eye
+  height: 100vh; //Keep an eye  
+
+  @media screen and (max-width: 1200px) {
+    height: fit-content;
+  }
 
   @media screen and (max-width: 450px) {
-    background-size: 100% 100%; //Keep an eye
+    background-size: 200% 100%; //Keep an eye
     height: auto; //Keep an eye
+    margin: 0 !important;
   }
+
+  @media screen and (max-height: 450px) and (min-width:1000px) {
+    background-size: 100% 100%; //Keep an eye    
+  }
+
+  // @media screen and (min-width: 800px) and (max-height: 1200px) {
+  //   background-size: 100% 100%; //Keep an eye
+  //   height: 100vh; //Keep an eye    
+  // }
+
+  // @media screen and (min-width: 800px) and (min-height: 1200px) {
+  //   background-size: 100% 100%; //Keep an eye
+  //   height: 50vh; //Keep an eye    
+  // }
 
   .app__wrapper {
     padding: 0;
@@ -34,6 +53,11 @@
   }
 
   @media screen and (max-width: 450px) {
+    padding: 6rem 1rem 2rem;
+  }
+
+  @media screen and (max-height: 450px) and (min-width:700px) {
+    flex-direction: row;
     padding: 6rem 1rem 2rem;
   }
 }
@@ -72,6 +96,22 @@
     font-size: 1rem;
   }
 
+  @media screen and (max-height: 450px) and (min-width:70px) {
+    font-size: 1rem;   
+    
+    :nth-child(1) {
+      font-size: 1.3rem;
+    }
+    
+    :nth-child(2) {
+      font-size: 1.3rem;
+    }
+
+    :nth-child(3) {
+      font-size: 0.9rem;
+    }
+  }
+  
   @media screen and (min-width: 2000px) {
     padding-top: 8rem;
   }
@@ -98,6 +138,7 @@
       font-size: 1rem;
     }
   }
+  
 }
 
 .app__header-img {
@@ -132,6 +173,12 @@
 
     img {
       height: 90vw;
+    }
+  }
+
+  @media screen and (max-height: 450px) and (min-width:70px) {
+    img {
+      height: 30vw;
     }
   }
 }
