@@ -20,14 +20,33 @@ const Header = () => {
             <strong className="p-text main-name"> Yash Oswal</strong>
           </span>          
           <code className="main-name">            
-            <d style={{ fontSize: 20, color: 'orange' }}>while()</d> noSuccess:<br />
+            <d style={{ fontSize: 20, color: 'orange' }}>while</d> noSuccess:<br />
             {space}<d style={{ fontSize: 20, color: 'blue' }}>code()</d><br />
-            {space}<d style={{ fontSize: 20, color: 'blue' }}>drinkCoffee()</d><br />
+            {space}<d style={{ fontSize: 20, color: 'pink' }}>coffee()</d><br />
             {space}<d style={{ fontSize: 20, color: 'blue' }}>code()</d><br />
-            {space}<d style={{ fontSize: 20, color: 'blue' }}>drinkCoffee()</d><br />
+            {space}<d style={{ fontSize: 20, color: 'pink' }}>coffee()</d><br />
             {space}<d style={{ fontSize: 20, color: 'orange' }}>if</d> dead:<br />            
             {space}{space}break<br />
           </code>
+          
+          <div>
+            <a href="https://drive.google.com/file/d/1lWDsOBbLlOBRQUD5A7417Srb0XB4vDF_/view?usp=sharing" download="YashOswal's Resume" target="_blank">
+              <button
+                type="button"
+                className="app__header-button"
+              >
+                Download CV
+              </button>
+            </a>
+            <a href="#contact">
+              <button
+                type="button"
+                className="app__header-button1"
+                >
+                Hire Me
+              </button>
+            </a>
+          </div>
           <br />
         </div>
         <div className="app__header-img">
