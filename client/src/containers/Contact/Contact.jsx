@@ -93,10 +93,14 @@ const Contact = () => {
                   name="username"
                   {...register("username", {
                     required: "Username is required",
+                    minLength: {
+                      value: 2,
+                      message: "Username cannot be empty. Please provide your username"
+                    }
                   })}
                 />
               </div>
-              {errors.username?.type === "required" && (
+              {errors.username && (
                 <span className="app__invalid">{errors.username.message}</span>
               )}
               <div className="app__flex">

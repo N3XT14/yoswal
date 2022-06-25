@@ -4,8 +4,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   position: fixed;
   z-index: 2;
 }
@@ -47,8 +47,7 @@
       &:hover {
         color: var(--tertiary-color);
       }
-
-    }        
+    }
 
     &:hover {
       div {
@@ -62,13 +61,18 @@
   }
 }
 
-.navbar{
-  color: transparent;
+.navbar {
+  background: -webkit-linear-gradient(-70deg, #db469f, #2188ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.1rem !important;
+  font-weight: bolder !important;
 }
 
-.navbar.colorChange{
-  color: #000;
-}
+// .navbar.colorChange{
+//   color: #000;
+// }
 
 .app__navbar-menu {
   width: 35px;
