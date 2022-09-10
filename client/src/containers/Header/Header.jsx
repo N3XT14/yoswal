@@ -7,7 +7,9 @@ import "./Header.scss";
 
 const Header = () => {
   const space = <Fragment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Fragment>
-
+  const Greet = (param) => {  
+    return <h6 style={param.style}>{space}{param.children}</h6> 
+  }
   return (
     <section id="home" className="home">
       <div className="app__header app__flex">
@@ -20,17 +22,17 @@ const Header = () => {
             <strong className="p-text main-name"> Yash Oswal</strong>
           </span>          
           <code className="main-name">            
-            <d style={{ fontSize: 20, color: 'orange' }}>while</d> noSuccess:<br />
-            {space}<d style={{ fontSize: 20, color: 'blue' }}>code()</d><br />
-            {space}<d style={{ fontSize: 20, color: 'pink' }}>coffee()</d><br />
-            {space}<d style={{ fontSize: 20, color: 'blue' }}>code()</d><br />
-            {space}<d style={{ fontSize: 20, color: 'pink' }}>coffee()</d><br />
-            {space}<d style={{ fontSize: 20, color: 'orange' }}>if</d> dead:<br />            
+            <Greet style={{ fontSize: 20, color: 'orange' }} text='while'>while</Greet> noSuccess:<br />
+            {space}<Greet style={{ fontSize: 20, color: 'blue' }}>code()</Greet><br />
+            {space}<Greet style={{ fontSize: 20, color: 'pink' }}>coffee()</Greet><br />
+            {space}<Greet style={{ fontSize: 20, color: 'blue' }}>code()</Greet><br />
+            {space}<Greet style={{ fontSize: 20, color: 'pink' }}>coffee()</Greet><br />
+            {space}<Greet style={{ fontSize: 20, color: 'orange' }}>if</Greet> dead:<br />            
             {space}{space}break<br />
           </code>
           
           <div>
-            <a href="https://drive.google.com/file/d/1lWDsOBbLlOBRQUD5A7417Srb0XB4vDF_/view?usp=sharing" download="YashOswal's Resume" target="_blank">
+            <a href="https://drive.google.com/file/d/1suz_L0Pyd_L4kWEl3Z7-nQuDYvq2sunS/view?usp=sharing" download="YashOswal's Resume" target="_blank">
               <button
                 type="button"
                 className="app__header-button"

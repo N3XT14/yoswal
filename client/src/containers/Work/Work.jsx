@@ -6,7 +6,8 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Work.scss";
 
 const Work = () => {
-  var workArr = ["Python", "AI/ML", "JavaScript", "TypeScript", "All"];
+  // var workArr = ["Python", "AI/ML", "JavaScript", "TypeScript", "All"];
+  let [workArr, setWorkArr] = useState([]);
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
@@ -22,8 +23,16 @@ const Work = () => {
         return;
       }
 
-      const data = await response.json();
-
+      const data = await response.json();      
+      for (let idx in data) {
+        for (let item of data[idx]["tags"]) {
+          if (workArr.includes(item) === false) {
+            workArr.push(item);
+          }
+        }
+      }
+            
+      setWorkArr(workArr)
       setWorks(data);
       setFilterWork(data);
     }
