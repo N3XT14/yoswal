@@ -91,4 +91,21 @@ recordRoutes.route("/addContactData").post(function (req, res) {
   });
 });
 
+
+// This API end point will help you get custom data from the database.
+recordRoutes.route("/customdata").post(function (req, res) {
+  let db_connect = dbo.getDb();
+  console.log(db_connect)
+
+  db_connect
+  .collection("custom")
+  .find({})
+  .toArray(function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+
+  console.log(res);
+});
+
 module.exports = recordRoutes;
