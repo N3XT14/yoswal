@@ -28,7 +28,7 @@ const Contact = () => {
       message: formData.message,
     };
 
-    const response = await fetch("https://n3xt.herokuapp.com/addContactData", {
+    const response = await fetch("https://n3xt14.github.io/Portfolio-React/addContactData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

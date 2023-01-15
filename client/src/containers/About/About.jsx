@@ -9,7 +9,7 @@ const About = () => {
 
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`https://n3xt.herokuapp.com/aboutdata/`);
+      const response = await fetch(`https://n3xt14.github.io/Portfolio-React/aboutdata/`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;

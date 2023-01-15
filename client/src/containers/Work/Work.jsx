@@ -6,8 +6,8 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Work.scss";
 
 const Work = () => {
-  // var workArr = ["Python", "AI/ML", "JavaScript", "TypeScript", "All"];
-  let [workArr, setWorkArr] = useState([]);
+  var workArr = ["Python", "AI/ML", "JavaScript", "TypeScript", "All"];
+  // let [workArr, setWorkArr] = useState([]);
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
@@ -15,7 +15,7 @@ const Work = () => {
 
   useEffect(() => {
     async function getWorkData() {
-      const response = await fetch(`https://n3xt.herokuapp.com/workdata/`);
+      const response = await fetch(`https://n3xt14.github.io/Portfolio-React/workdata/`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
@@ -24,15 +24,15 @@ const Work = () => {
       }
 
       const data = await response.json();      
-      for (let idx in data) {
-        for (let item of data[idx]["tags"]) {
-          if (workArr.includes(item) === false) {
-            workArr.push(item);
-          }
-        }
-      }
+      // for (let idx in data) {
+      //   for (let item of data[idx]["tags"]) {
+      //     if (workArr.includes(item) === false) {
+      //       workArr.push(item);
+      //     }
+      //   }
+      // }
             
-      setWorkArr(workArr)
+      // setWorkArr(workArr)
       setWorks(data);
       setFilterWork(data);
     }

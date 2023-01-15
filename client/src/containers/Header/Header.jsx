@@ -8,7 +8,7 @@ import "./Header.scss";
 const Header = () => {
   const space = <Fragment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Fragment>
   async function getCustomData() {
-    const response = await fetch(`https://n3xt.herokuapp.com/getCustomData/`);
+    const response = await fetch(`https://n3xt14.github.io/Portfolio-React/getCustomData/`);
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -32,18 +32,18 @@ const Header = () => {
             I'm
             <strong className="p-text main-name"> Yash Oswal</strong>
           </span>          
-          <code className="main-name">            
+          <code className="main-name">
             <d style={{ fontSize: 20, color: 'orange' }}>while</d> noSuccess:<br />
             {space}<d style={{ fontSize: 20, color: 'blue' }}>code()</d><br />
             {space}<d style={{ fontSize: 20, color: 'pink' }}>coffee()</d><br />
             {space}<d style={{ fontSize: 20, color: 'blue' }}>code()</d><br />
             {space}<d style={{ fontSize: 20, color: 'pink' }}>coffee()</d><br />
-            {space}<d style={{ fontSize: 20, color: 'orange' }}>if</d> dead:<br />            
+            {space}<d style={{ fontSize: 20, color: 'orange' }}>if</d> dead:<br />         
             {space}{space}break<br />
           </code>
           
           <div>
-            <a href="https://drive.google.com/file/d/1suz_L0Pyd_L4kWEl3Z7-nQuDYvq2sunS/view?usp=sharing" download="YashOswal's Resume" target="_blank">
+            <a href="https://drive.google.com/file/d/1suz_L0Pyd_L4kWEl3Z7-nQuDYvq2sunS/view?usp=sharing" download="YashOswal's Resume">
               <button
                 type="button"
                 className="app__header-button"
