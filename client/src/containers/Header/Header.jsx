@@ -8,7 +8,7 @@ import "./Header.scss";
 const Header = () => {
   const space = <Fragment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Fragment>
   async function getCustomData() {
-    const response = await fetch(`https://n3xt14.github.io/Portfolio-React/getCustomData/`);
+    const response = await fetch(`https://portfoliobackend-5h51.onrender.com/getCustomData/`);
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;

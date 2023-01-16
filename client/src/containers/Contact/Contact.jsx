@@ -28,7 +28,7 @@ const Contact = () => {
       message: formData.message,
     };
 
-    const response = await fetch("https://n3xt14.github.io/Portfolio-React/addContactData", {
+    const response = await fetch("https://portfoliobackend-5h51.onrender.com/addContactData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

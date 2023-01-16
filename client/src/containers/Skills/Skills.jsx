@@ -12,8 +12,8 @@ const Skills = () => {
 
   useEffect(() => {
     async function getSkillData() {
-      const sResponse = await fetch(`https://n3xt14.github.io/Portfolio-React/skillsdata/`);
-      const eResponse = await fetch(`https://n3xt14.github.io/Portfolio-React/experiences`);
+      const sResponse = await fetch(`https://portfoliobackend-5h51.onrender.com/skillsdata/`);
+      const eResponse = await fetch(`https://portfoliobackend-5h51.onrender.com/experiences`);
 
       if (!sResponse.ok) {
         const message = `An error occurred: ${sResponse.statusText}`;
