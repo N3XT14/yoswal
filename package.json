@@ -2,7 +2,7 @@
   "name": "backend_react",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://N3XT14.github.io/Portfolio-React",
+  "homepage": "https://N3XT14.github.io/yoswal",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
