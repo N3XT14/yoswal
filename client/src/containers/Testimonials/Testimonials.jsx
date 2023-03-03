@@ -15,7 +15,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     async function getTestimonialsData() {
-      const response = await fetch(`https://portfoliobackend-5h51.onrender.com/testimonialsdata/`);
+      const response = await fetch(`https://portfoliobe.onrender.com/testimonialsdata/`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;

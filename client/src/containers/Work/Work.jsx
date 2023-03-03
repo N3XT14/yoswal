@@ -15,7 +15,7 @@ const Work = () => {
 
   useEffect(() => {
     async function getWorkData() {
-      const response = await fetch(`https://portfoliobackend-5h51.onrender.com/workdata/`);
+      const response = await fetch(`https://portfoliobe.onrender.com/workdata/`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
