@@ -11,7 +11,7 @@ const About = () => {
   useEffect(() => {
     async function getRecords() {
       try {
-        const response = await fetch(`https://yoswal-production.up.railway.app/aboutdata/`);
+        const response = await fetch(`https://portfoliobe.onrender.com/aboutdata/`);
   
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;

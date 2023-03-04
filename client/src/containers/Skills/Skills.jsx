@@ -12,8 +12,8 @@ const Skills = () => {
 
   useEffect(() => {
     async function getSkillData() {
-      const sResponse = await fetch(`https://yoswal-production.up.railway.app/skillsdata/`);
-      const eResponse = await fetch(`https://yoswal-production.up.railway.app/experiences`);
+      const sResponse = await fetch(`https://portfoliobe.onrender.com/skillsdata/`);
+      const eResponse = await fetch(`https://portfoliobe.onrender.com/experiences`);
 
       if (!sResponse.ok) {
         const message = `An error occurred: ${sResponse.statusText}`;

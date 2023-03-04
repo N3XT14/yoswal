@@ -15,7 +15,7 @@ const Work = () => {
 
   useEffect(() => {
     async function getWorkData() {
-      const response = await fetch(`https://yoswal-production.up.railway.app/workdata/`);
+      const response = await fetch(`https://portfoliobe.onrender.com/workdata/`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
