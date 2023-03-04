@@ -8,7 +8,7 @@ import "./Header.scss";
 const Header = () => {
   const space = <Fragment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Fragment>
   // async function getCustomData() {
-  //   const response = await fetch(`https://portfoliobe.onrender.com/getCustomData/`);
+  //   const response = await fetch(`https://yoswal-production.up.railway.app/getCustomData/`);
 
   //   if (!response.ok) {
   //     const message = `An error occurred: ${response.statusText}`;
