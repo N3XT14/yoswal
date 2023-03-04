@@ -14,19 +14,14 @@ const client = new MongoClient(Db, {
 var _db;
 
 module.exports = {
-  connectToServer: async function (callback) {
-    console.log("Reached connectToServer");
-    try {
-      const db = await client.connect();
-      console.log("Inside connectToServer");
-      _db = db.db(process.env.DB_NAME);
-      console.log("Successfully connected to MongoDB.");
-      return callback(null);
-    } catch (err) {
+  connectToServer: function (callback) {
+    client.connect(function (err, db) {
+      if (db) {
+        _db = db.db(process.env.DB_NAME);
+        console.log("Successfully connected to MongoDB.");
+      }
       return callback(err);
-    } finally {
-      console.log("Reached connectToServer End");
-    }
+    });
   },
 
   getDb: function () {
