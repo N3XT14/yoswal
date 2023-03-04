@@ -28,7 +28,7 @@ const Contact = () => {
       message: formData.message,
     };
 
-    const response = await fetch("https://portfoliobe.onrender.com/addContactData", {
+    const response = await fetch("https://yoswal-production.up.railway.app/addContactData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
