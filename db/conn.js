@@ -1,6 +1,12 @@
 const { MongoClient } = require("mongodb");
 const Db = process.env.MONGODB_URI;
 const client = new MongoClient(Db, {
+  // auth: {
+  //   username: process.env.AWS_ACCESS_KEY_ID,
+  //   password: process.env.AWS_SECRET_ACCESS_KEY
+  // },
+  //   authSource: '$external',
+  //   authMechanism: 'MONGODB-AWS'
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -18,8 +24,9 @@ module.exports = {
       return callback(null);
     } catch (err) {
       return callback(err);
+    } finally {
+      console.log("Reached connectToServer End");
     }
-    console.log("Reached connectToServer End");
   },
 
   getDb: function () {
