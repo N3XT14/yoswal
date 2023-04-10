@@ -6,8 +6,8 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Work.scss";
 
 const Work = () => {
-  var workArr = ["Python", "AI/ML", "JavaScript", "TypeScript", "All"];
-  // let [workArr, setWorkArr] = useState([]);
+
+  const [workArr, setWorkArr] = useState([]);
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
@@ -23,16 +23,18 @@ const Work = () => {
         return;
       }
 
-      const data = await response.json();      
-      // for (let idx in data) {
-      //   for (let item of data[idx]["tags"]) {
-      //     if (workArr.includes(item) === false) {
-      //       workArr.push(item);
-      //     }
-      //   }
-      // }
-            
-      // setWorkArr(workArr)
+      const data = await response.json();
+
+      let arr = ["All"];
+      for (let idx in data) {
+        for (let item of data[idx]["tags"]) {
+          if (arr.includes(item) === false) {
+            arr.push(item);
+          }
+        };
+      };
+
+      setWorkArr(arr)
       setWorks(data);
       setFilterWork(data);
     }
@@ -117,13 +119,13 @@ const Work = () => {
             </div>
 
             <div className="app__work-content app__flex">
-              <h4 className="bold-text">{work.title}</h4>
+              <h4 className="bold-text">{work.tags.join(', ')}</h4>              
               <p className="p-text p-desc" style={{ marginTop: 10 }}>
                 {work.description}
               </p>
 
               <div className="app__work-tag app__flex">
-                <p className="p-text">{work.tags[0]}</p>
+                <p className="p-text">{work.title}</p>
               </div>
             </div>
           </div>

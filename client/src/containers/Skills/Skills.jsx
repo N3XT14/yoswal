@@ -77,14 +77,16 @@ const Skills = () => {
                     key={work.name}
                   >
                     <h4 className="bold-text">{work.name}</h4>
-                    <p className="p-text">{work.company}</p>
+                    <p className="p-text">{work.company}</p>                    
                     <ReactTooltip
                       id={work.name}
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
                     >
-                      {work.desc}
+                      {work.desc.split("\n").map((line, index) => (
+                        <div key={index}>{line} <br /></div>
+                      ))}
                     </ReactTooltip>
                   </motion.div>
                 ))}

@@ -14,11 +14,15 @@ import git from "../assets/git.png";
 import graphql from "../assets/graphql.png";
 import html from "../assets/html.png";
 import javascript from "../assets/javascript.png";
+import cpp from "../assets/cpp.png";
 import node from "../assets/node.png";
 import python from "../assets/python.png";
 import react from "../assets/react.png";
 import sass from "../assets/sass.png";
 import typescript from "../assets/typescript.png";
+import extjs from "../assets/extjs.png";
+import oracle from "../assets/oracle.png";
+import mongodb from "../assets/mongodb.png";
 import github from "../assets/github.png";
 import email from "../assets/email.png";
 
@@ -39,11 +43,15 @@ var images = {
   graphql,
   html,
   javascript,
+  cpp,
   node,
   python,
   react,
   sass,
   typescript,
+  extjs,
+  oracle,
+  mongodb,
   github,
   email,
 };
