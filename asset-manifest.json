@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yoswal/static/css/main.dae0bf13.css",
-    "main.js": "/yoswal/static/js/main.8a38f689.js",
+    "main.js": "/yoswal/static/js/main.deed8e38.js",
     "static/media/about04.png": "/yoswal/static/media/about04.fa7b3a72ed32b0e25bfb.png",
     "static/media/about02.png": "/yoswal/static/media/about02.7a3df03410ee756268ec.png",
     "static/media/profile.png": "/yoswal/static/media/profile.9705630411cd5a673a6b.png",
@@ -12,6 +12,7 @@
     "static/media/bg.jpg": "/yoswal/static/media/bg.1e3d1009a75ccfe6c0aa.jpg",
     "static/media/sass.png": "/yoswal/static/media/sass.36e863bfbcb25c109d00.png",
     "static/media/node.png": "/yoswal/static/media/node.8683d89cf78ffae3d1f7.png",
+    "static/media/cpp.png": "/yoswal/static/media/cpp.9002a804bbfa0354d0b8.png",
     "static/media/graphql.png": "/yoswal/static/media/graphql.0372057049181c5de51a.png",
     "static/media/Vector2.png": "/yoswal/static/media/Vector2.28db5bfd58081dd1df1b.png",
     "static/media/figma.png": "/yoswal/static/media/figma.152e55329b6f1915967e.png",
@@ -21,10 +22,10 @@
     "static/media/repo-editor-glow.svg": "/yoswal/static/media/repo-editor-glow.5bbd99a19e2baebbb0252fee01d3bfe3.svg",
     "index.html": "/yoswal/index.html",
     "main.dae0bf13.css.map": "/yoswal/static/css/main.dae0bf13.css.map",
-    "main.8a38f689.js.map": "/yoswal/static/js/main.8a38f689.js.map"
+    "main.deed8e38.js.map": "/yoswal/static/js/main.deed8e38.js.map"
   },
   "entrypoints": [
     "static/css/main.dae0bf13.css",
-    "static/js/main.8a38f689.js"
+    "static/js/main.deed8e38.js"
   ]
 }
