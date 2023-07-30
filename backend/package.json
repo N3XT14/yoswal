@@ -1,0 +1,27 @@
+{
+  "name": "yoswal",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://N3XT14.github.io/yoswal",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "deploy": "serverless deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws4": "^1.12.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "mongodb": "^4.5.0",
+    "serverless-http": "^3.1.1",
+    "serverless-webpack": "^5.11.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
