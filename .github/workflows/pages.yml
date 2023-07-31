@@ -6,10 +6,19 @@ on:
         - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v1
-        - run: ./bin/update-gh-pages
-          env:
-              GITHUB_TOKEN: ${{ secrets.github_token }}
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
