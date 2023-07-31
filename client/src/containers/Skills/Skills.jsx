@@ -7,23 +7,113 @@ import images from "../../constants/images.js";
 import "./Skills.scss";
 
 const Skills = () => {
-  const [skills, setSkills] = useState([]);
-  const [experiences, setExperience] = useState([]);
+  const staticData = {
+    "skills": [
+      {          
+          "name": "python",
+          "bgColor": "python"
+      },
+      {          
+          "name": "git",
+          "bgColor": "#fff3e0"
+      },
+      {          
+          "name": "javascript",
+          "bgColor": "#fffff2"
+      },
+      {          
+          "name": "typescript",
+          "bgColor": "#fffff2"
+      },
+      {          
+          "name": "cpp",
+          "bgColor": "#bbdefb"
+      },
+      {          
+          "name": "react",
+          "bgColor": "#fffff2"
+      },
+      {          
+          "name": "github",
+          "bgColor": "#ffffff"
+      },
+      {          
+          "name": "node",
+          "bgColor": "node"
+      },
+      {          
+          "name": "flutter",
+          "bgColor": "flutter"
+      },
+      {          
+          "name": "extjs",
+          "bgColor": "extjs"
+      },
+      {          
+          "name": "oracle",
+          "bgColor": "oracle"
+      },
+      {          
+          "name": "mongodb",
+          "bgColor": "mongodb"
+      }
+    ],
+    "experiences": [
+      {
+        "year": "2023/05 - Present",
+        "works": [
+            {
+                "name": "Software Developer & AI Intern",
+                "company": "EMPEQ",
+                "desc": "Developed a comprehensive build plan for the creation of Equipment Libraries, considering project scope, requirements, and timelines, resulting in an on-time delivery of the solution.\n• Made critical decisions on data structure, optimized search performance, and enabled seamless handling of unstructured data.\n• Implemented an ETL process, resulting in a 25% improvement in data quality and usability within the Equipment Libraries.\n• Implemented the ELK stack, leveraging rule-based transformations to overcome the challenge of non-straightforward data linkage with SQL databases and significantly improving search output by 50% over a REST API endpoint.\n• Led the effort to derive actionable business insights and identify meaningful patterns from the Equipment Libraries, contributing to improved decision-making and a 20% increase in operational efficiency.\n• Initiated the development of an AI pipeline, incorporating key algorithms and techniques to enhance the project outcome.\n• Focusing on achieving a 100% reduction in the reliance on Amazon’s Mechanical Trunk, ensuring an automated and efficient system"
+            }
+        ]
+      },
+      {          
+        "year": "2020/08 - 2023/01",
+        "works": [
+            {
+                "name": "Software Engineer",
+                "company": "Vistaar Technologies",
+                "desc": "•Great at code base understanding, debugging logs, enhancement implementation, and peer code review.\n•Streamlined deployment tasks on Dev-Dev, Client-Dev, and Client-QA servers by creating customized Bash scripts, resulting in 2 hours of\nsaved manual effort and monitoring per day.\n•Worked in an Agile model including scrum meeting, ticketing framework, and, SVN version control.\n•Collaborated in comprehending project specifications and engaging in technical discussions, proactively raising inquiries and offering\nalternative suggestions backed by extensive research and development.\nFord GMCF\n•Resolved global customers' solution-specific queries with a Non-Technical explanation.\n•Handled a variety of tickets, with a focus on 20% enhancements, and addressed 80% of tickets (20% bug fixes and 60% As Designed tickets).\n•Created HLD(High-Level Design) and LLD(Low-Level Design) for a \"Ford-Feed To IMPRS\" system(UI-DB-BE).\nTFM\n•Implemented MViews, MView logs, and batch jobs to reduce the query time by 80% and automate overnight data processing.\n•Developed production-level codebase (with future enhancement) and UTP files which passed the QA-Testing by 94%.\nCanopy Growth\n•Utilized Vega Charts to replace Custom Charts and improved customer satisfaction based on customer feedback\n•Conducted peer sessions to share insights on implementing, integrating, and troubleshooting Vega Charts."
+            }
+        ]
+      },
+      {          
+        "year": "2020/01 – 2020/06",
+        "works": [
+            {
+                "name": "Software Developer Intern",
+                "company": "The Small Big Idea",
+                "desc": "Developed a solution to examine the social media activities of their clients such as posts, videos, comments, etc., which reduced the manual work\nby 60% by importing social media data through API's authorization token (read-only).\n•Integrated API endpoints of Twitter, Facebook, and Instagram for importing data.\n•Implemented visualization tools, including pie charts, graphs, and percentage distributions, resulting in a 28.8% improvement in analysis by\nenabling a better understanding of patterns and trends within the data, leading to more informed decision-making.\n•Implemented machine learning capabilities such as Image recognition, character recognition, and sentimental analysis and categorized them\ninto appropriate groups"
+            }
+        ]
+      },
+      {          
+        "year": "2018/02 - 2019/02",
+        "works": [
+            {
+                "name": "Web Developer Intern",
+                "company": "Indian Development Foundation",
+                "desc": "Revamped the existing static website to a dynamic one with an Admin Panel. Increased traffic by 70% by helping them provide the tool to dynamically post/create-event, organize/manage them, etc. Within 6 months after deployment the website replaced the old domain."
+            }
+        ]
+      }
+    ],
+  };
+  const [skills, setSkills] = useState(staticData["skills"]);
+  const [experiences, setExperience] = useState(staticData["experiences"]);
 
   useEffect(() => {
     async function getSkillData() {
-      const sResponse = await fetch(`https://yoswal-production.up.railway.app/skillsdata/`);
-      const eResponse = await fetch(`https://yoswal-production.up.railway.app/experiences`);
+      const sResponse = await fetch(`https://portfolio-vzex.onrender.com/skillsdata/`);
+      const eResponse = await fetch(`https://portfolio-vzex.onrender.com/experiences`);
 
       if (!sResponse.ok) {
-        const message = `An error occurred: ${sResponse.statusText}`;
-        window.alert(message);
         return;
       }
 
       if (!eResponse.ok) {
-        const message = `An error occurred: ${eResponse.statusText}`;
-        window.alert(message);
         return;
       }
 

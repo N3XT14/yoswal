@@ -28,7 +28,7 @@ const Contact = () => {
       message: formData.message,
     };
 
-    const response = await fetch("https://yoswal-production.up.railway.app/addContactData", {
+    const response = await fetch("https://portfolio-vzex.onrender.com/addContactData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,13 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          {!isFormSubmitted ? (
+          {isFormSubmitted ? 
+            <div>
+              <h3 className="head-text app__formdata-resp">
+                Thank you for getting in touch!
+              </h3>
+            </div>
+          : 
             <form
               className="app__contact-form app__flex"
               onSubmit={handleSubmit(onSubmit)}
@@ -129,16 +135,9 @@ const Contact = () => {
                 />
               </div>
               <button type="submit" className="p-text app__formdata-button">
-                {!loading ? "Send Message" : "Sending..."}
+                {loading ? "Sending..." : "Send Message"}
               </button>
-            </form>
-          ) : (
-            <div>
-              <h3 className="head-text app__formdata-resp">
-                Thank you for getting in touch!
-              </h3>
-            </div>
-          )}
+            </form>}
         </>
       )}
     </>

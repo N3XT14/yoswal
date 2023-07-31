@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 
@@ -6,7 +6,55 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Work.scss";
 
 const Work = () => {
-
+  const staticData = useMemo(() => [
+    {        
+        "imgUrl": "https://github.com/N3XT14/yoswal/blob/main/client/src/assets/portfolioReact.jpg?raw=true",
+        "codeLink": "https://github.com/N3XT14/yoswal",
+        "description": "Personalized portfolio of my skills, projects and ability to connect",
+        "name": "Portfolio",
+        "projectLink": "https://n3xt14.github.io/yoswal/",
+        "tags": [
+            "JavaScript"
+        ],
+        "title": "N3XT"
+    },
+    {        
+        "imgUrl": "https://raw.githubusercontent.com/N3XT14/yoswal/main/client/src/assets/chatBot.jpg",
+        "codeLink": "https://github.com/N3XT14/Chatbot",
+        "description": "Edu consultation chatbot for students of Secondary and HSC",
+        "name": "Python",
+        "projectLink": "https://github.com/N3XT14/Chatbot/tree/master/Result",
+        "tags": [
+            "AI/ML",
+            "Python"
+        ],
+        "title": "EDUBot"
+    },
+    {        
+        "imgUrl": "https://github.com/N3XT14/yoswal/blob/main/client/src/assets/myAccountant.jpg?raw=true",
+        "codeLink": "https://github.com/N3XT14/Financial-Dashboard",
+        "description": "Personalized Financial Dashboard - A smart way to visualize and manage your finances.",
+        "name": "Python",
+        "projectLink": "https://next-myaccountant.herokuapp.com/",
+        "tags": [
+            "Flask",
+            "Python"
+        ],
+        "title": "My Accountant"
+    },
+    {        
+        "imgUrl": "https://raw.githubusercontent.com/N3XT14/Instagram-clone/main/assets/instagram_img.jpg",
+        "codeLink": "https://github.com/N3XT14/Instagram-clone",
+        "description": "Instagram Clone",
+        "name": "UI/UX",
+        "projectLink": "https://github.com/N3XT14/Instagram-clone/blob/main/Result.md",
+        "tags": [
+            "Flutter"
+        ],
+        "title": "Instagram Clone"
+    }
+  ],[]) 
+  
   const [workArr, setWorkArr] = useState([]);
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -15,15 +63,15 @@ const Work = () => {
 
   useEffect(() => {
     async function getWorkData() {
-      const response = await fetch(`https://yoswal-production.up.railway.app/workdata/`);
+      const response = await fetch(`https://portfolio-vzex.onrender.com/workdata/`);
 
-      if (!response.ok) {
-        const message = `An error occurred: ${response.statusText}`;
-        window.alert(message);
-        return;
+      let data;
+      if (!response.ok) {        
+        data = staticData;
       }
-
-      const data = await response.json();
+      else {
+        data = await response.json();
+      }
 
       let arr = ["All"];
       for (let idx in data) {
@@ -40,7 +88,7 @@ const Work = () => {
     }
     getWorkData();
     return;
-  }, [works.length]);
+  }, [staticData, works.length]);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);

@@ -6,8 +6,19 @@ import "./Testimonials.scss";
 import { images } from "../../constants";
 
 const Testimonials = () => {
+  const staticData = [
+    {        
+        "testimonials": [
+            {
+                "name": "github",
+                "company": "Github",
+                "feedback": "He is a awesome developer having acute insights of the things he develops."
+            }
+        ]
+    }
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState(staticData[0]["testimonials"]);
 
   const handleClick = (index) => {
     setCurrentIndex(index);
@@ -15,11 +26,9 @@ const Testimonials = () => {
 
   useEffect(() => {
     async function getTestimonialsData() {
-      const response = await fetch(`https://yoswal-production.up.railway.app/testimonialsdata/`);
+      const response = await fetch(`https://portfolio-vzex.onrender.com/testimonialsdata/`);
 
-      if (!response.ok) {
-        const message = `An error occurred: ${response.statusText}`;
-        window.alert(message);
+      if (!response.ok) {        
         return;
       }
       const data = await response.json();
