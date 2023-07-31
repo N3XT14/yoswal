@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/yoswal/static/css/main.dae0bf13.css",
-    "main.js": "/yoswal/static/js/main.deed8e38.js",
+    "main.css": "/yoswal/static/css/main.067d54a9.css",
+    "main.js": "/yoswal/static/js/main.ce83b9ed.js",
     "static/media/about04.png": "/yoswal/static/media/about04.fa7b3a72ed32b0e25bfb.png",
     "static/media/about02.png": "/yoswal/static/media/about02.7a3df03410ee756268ec.png",
     "static/media/profile.png": "/yoswal/static/media/profile.9705630411cd5a673a6b.png",
@@ -21,11 +21,11 @@
     "static/media/git.png": "/yoswal/static/media/git.a54d3fa44e02f2f61e69.png",
     "static/media/repo-editor-glow.svg": "/yoswal/static/media/repo-editor-glow.5bbd99a19e2baebbb0252fee01d3bfe3.svg",
     "index.html": "/yoswal/index.html",
-    "main.dae0bf13.css.map": "/yoswal/static/css/main.dae0bf13.css.map",
-    "main.deed8e38.js.map": "/yoswal/static/js/main.deed8e38.js.map"
+    "main.067d54a9.css.map": "/yoswal/static/css/main.067d54a9.css.map",
+    "main.ce83b9ed.js.map": "/yoswal/static/js/main.ce83b9ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.dae0bf13.css",
-    "static/js/main.deed8e38.js"
+    "static/css/main.067d54a9.css",
+    "static/js/main.ce83b9ed.js"
   ]
 }
