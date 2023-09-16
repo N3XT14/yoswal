@@ -61,6 +61,21 @@ const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
+  const processWorkData = (data) => {
+    let arr = ["All"];
+      for (let idx in data) {
+        for (let item of data[idx]["tags"]) {
+          if (arr.includes(item) === false) {
+            arr.push(item);
+          };
+        };
+      };
+
+      setWorkArr(arr)
+      setWorks(data);
+      setFilterWork(data);
+  };
+
   useEffect(() => {
     async function getWorkData() {
       const response = await fetch(`https://portfolio-vzex.onrender.com/workdata/`);
@@ -72,19 +87,7 @@ const Work = () => {
       else {
         data = await response.json();
       }
-
-      let arr = ["All"];
-      for (let idx in data) {
-        for (let item of data[idx]["tags"]) {
-          if (arr.includes(item) === false) {
-            arr.push(item);
-          }
-        };
-      };
-
-      setWorkArr(arr)
-      setWorks(data);
-      setFilterWork(data);
+      processWorkData(data);
     }
     getWorkData();
     return;

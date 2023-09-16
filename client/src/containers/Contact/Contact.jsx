@@ -6,7 +6,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Contact.scss";
 
 const Contact = () => {
-  const emailID = "yashoswal14@gmail.com";
+  const emailID = "yashoswal1405@gmail.com";
 
   // Toggle Contact Form
   const useToggle = (initialState = false) => {

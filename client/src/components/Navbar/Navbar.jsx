@@ -6,8 +6,9 @@ import { images } from "../../constants";
 import "./Navbar.scss";
 
 const Navbar = () => {
-  var linkList = ["home", "about", "work", "skills", "contact"];
+  const linkList = ["home", "about", "work", "skills", "contact", "blog"];
   const [toggle, setToggle] = useState(false);
+  const blogUrl = "https://medium.com/@yashoswal1405";
   //const [colorChange, setColorChange] = useState(false);
   // const eRef = useRef(null);
   // console.log(eRef.current?.clientHeight);
@@ -31,9 +32,15 @@ const Navbar = () => {
         {linkList.map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
             <div />
-            <a href={`#${item}`} className="navbar">
-              <h4>{item}</h4>
-            </a>
+            { item === "blog"? (
+              <a href={blogUrl} className="navbar" target="_blank" rel="noopener noreferrer">
+                <h4>{item}</h4>
+              </a>
+            ) : (
+              <a href={`#${item}`} className="navbar">
+                <h4>{item}</h4>
+              </a>
+            )}
           </li>
         ))}
       </ul>
